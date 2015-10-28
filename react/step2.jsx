@@ -6,8 +6,10 @@ let CardView = React.createClass({
   render: function() {
     return (
       <div>
-        <p>Question: {this.props.card.question}</p>
-        <p>Answer: {this.props.card.answer}</p>
+        <p>Question:
+          {this.props.card.question}</p>
+        <p>Answer:
+          {this.props.card.answer}</p>
       </div>
     );
   }
@@ -20,8 +22,6 @@ let App = React.createClass({
     );
   }
 });
-
-
 
 let myCard = {
   question: "What is the ultimate answer to life, the universe, and everything?",

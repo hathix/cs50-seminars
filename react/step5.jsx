@@ -35,16 +35,37 @@ let CardView = React.createClass({
 });
 
 let App = React.createClass({
+  getInitialState: function() {
+    return {
+      activeIndex: 0
+    }
+  },
+
+  setActiveIndex: function(newIndex) {
+    this.setState({
+      activeIndex: newIndex
+    });
+  },
+
   render: function() {
+    let activeCard = this.props.cards[this.state.activeIndex];
     return (
-      <CardView card={this.props.card}/>
+        <div>
+      <CardView card={activeCard}/>
+      <button onClick={this.nextCard}
+      </div>
     );
   }
 });
 
-let myCard = {
-  question: "What is the ultimate answer to life, the universe, and everything?",
-  answer: "42"
-};
+let cards = [
+  {
+    question: "What is the ultimate answer to life, the universe, and everything?",
+    answer: "42"
+  }, {
+    question: "When was Harvard founded?",
+    answer: "1636"
+  }
+];
 
-React.render(<App card={myCard}/>, document.getElementById('page'));
+React.render(<App cards={cards}/>, document.getElementById('page'));
