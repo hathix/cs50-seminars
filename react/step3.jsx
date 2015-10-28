@@ -1,3 +1,7 @@
+/**
+ * Step 3: add interactivity with state
+ */
+
 let CardView = React.createClass({
   getInitialState: function() {
     return {
